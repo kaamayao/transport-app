@@ -1,0 +1,42 @@
+@import '../../global.scss';
+
+.averagetime{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__results{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid $color-purple;
+    border-radius: 15px;
+  }
+
+  &__title{
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: $color-purple-sec;
+  }
+
+  &__info{
+    margin: 0;
+    font-weight: bold;
+    font-size: 30px;
+    color: $color-purple;
+  }
+
+  &__map{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../static/map.png');
+    height: 100%;
+    width: 100%;
+  }
+}
