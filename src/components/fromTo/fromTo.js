@@ -6,16 +6,39 @@ export default class FromTo extends React.Component {
     from: '',
     to: '',
     time: '',
+    locations: [],
   }
+
+  fromLocations = []
+  toLocations = []
 
   constructor(props) {
     super(props);
     this.handleFormChange = this.handleFormChange.bind(this);
+    this.getLocationsDB = this.getLocationsDB.bind(this);
   }
 
   handleFormChange(event) {
     const state = this.state;
     state[event.target.name] = event.target.value;
+    this.setState(
+      state
+    );
+  }
+
+  componentDidMount(){
+    this.getLocationsDB();
+  }
+
+  async getLocationsDB(){
+    const state = this.state;
+    const response = await fetch('http://localhost:3030/locations');
+    const locations = await response.json();
+    state.locations = locations;
+    for (const location of locations){
+      this.fromLocations.push(<option onClick={(e)=>this.props.onLocationSelect(e,'from')} value={location.duration} key={location.id}>{location.from.name}</option>);
+      this.toLocations.push(<option onClick={(e)=>this.props.onLocationSelect(e,'to')} value={location.duration} key={location.id}>{location.to.name}</option>);
+    }
     this.setState(
       state
     );
@@ -27,18 +50,13 @@ export default class FromTo extends React.Component {
         <div className="fromTo__location-container">
           <div className="fromTo__wrap">
             <label className="fromTo__label">From</label>
-            <input className="fromTo__fromTxt" name="from" type="text"
-                    onChange={this.handleFormChange}/>
-            <label className="fromTo__label">to</label>
-            <input className="fromTo__toTxt" name="to" type="text"
-                    onChange={this.handleFormChange}/>
-          </div>
-        </div>
-        <div className="fromTo__time-wrap">
-          <div className="fromTo__wrap">
-            <label className="fromTo__label">Time</label>
-            <input className="fromTo__timeTxt" name="time" type="text"
-                    onChange={this.handleFormChange}/>
+            <select className="fromTo__fromTxt" id="cars" name="cars">
+              {this.fromLocations}
+            </select>
+            <label className="fromTo__label">To</label>
+            <select className="fromTo__fromTxt" id="cars" name="cars">
+              {this.toLocations}
+            </select>
           </div>
         </div>
       </div>

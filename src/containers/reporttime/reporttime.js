@@ -7,6 +7,13 @@ export default class ReportTime extends React.Component {
     return (
       <div className="reporttime">
         <FromTo></FromTo>
+        <div className="fromTo__time-wrap">
+          <div className="fromTo__wrap">
+            <label className="fromTo__label">Time</label>
+            <input className="fromTo__timeTxt" name="time" type="text"
+                    onChange={this.handleFormChange}/>
+          </div>
+        </div>
         <div className="reporttime__map">
         </div>
         <div className="reporttime__accept-container">
