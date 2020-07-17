@@ -1,6 +1,5 @@
 import React from 'react';
 import './reporttime.scss';
-import Map from '../../static/map.png';
 import FromTo from '../../components/fromTo/fromTo.js'
 
 export default class ReportTime extends React.Component {

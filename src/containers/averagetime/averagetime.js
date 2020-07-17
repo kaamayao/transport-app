@@ -3,9 +3,6 @@ import './averagetime.scss';
 import FromTo from '../../components/fromTo/fromTo.js'
 
 export default class AverageTime extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
