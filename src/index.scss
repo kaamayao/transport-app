@@ -7,8 +7,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $color-purple;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #454055;
 }
 
 code {
@@ -17,5 +20,9 @@ code {
 }
 
 #root{
+  background-color: $color-purple;
+  width: 100%;
+  max-width: 600px;
   height: 100%;
+  border: 1px solid white;
 }

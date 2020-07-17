@@ -11,7 +11,7 @@ export default class ReportTime extends React.Component {
         </div>
         <div className="reporttime__accept-container">
           <button className="reporttime__accept-btn">
-            Aceptare
+            Aceptar
           </button>
         </div>
       </div>
