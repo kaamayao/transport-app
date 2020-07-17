@@ -10,7 +10,9 @@ export default class ReportTime extends React.Component {
         <div className="reporttime__map">
         </div>
         <div className="reporttime__accept-container">
-            <button className="reporttime__accept-btn">Aceptar</button>
+          <button className="reporttime__accept-btn">
+            Aceptare
+          </button>
         </div>
       </div>
     );
